@@ -25,8 +25,9 @@ export async function POST(request: NextRequest) {
     } else {
       return new Response("Invalid content type, JSON not parsed");
     }
-  } catch (error) {
+  } catch (error: any) {
     //console.log(error)
+    return new Response(error)
     return new Response("Error while parsing JSON");
   }
 }

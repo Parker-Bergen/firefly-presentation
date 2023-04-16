@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { NextRequest } from "next/server";
-import { env } from "process";
 
 export async function POST(request: NextRequest) {
   const prisma = new PrismaClient();
@@ -8,8 +7,8 @@ export async function POST(request: NextRequest) {
     // Check if the request has a valid content type before parsing JSON
     if (request.headers.get("content-type")?.includes("application/json")) {
       const requestBody = await request.json();
-      return new Response(`Key: ${requestBody.key}, ENV: ${env.NEXT_PUBLIC_APIKEY}, Body: ${requestBody !==null}`);
-      if (requestBody !== null && requestBody.key === env.NEXT_PUBLIC_APIKEY) {
+      return new Response(`Key: ${requestBody.key}, ENV: ${process.env.NEXT_PUBLIC_APIKEY}, Body: ${requestBody !==null}`);
+      if (requestBody !== null && requestBody.key === process.env.NEXT_PUBLIC_APIKEY) {
         const logData = {
           broswer: requestBody.browser,
           device: requestBody.device,

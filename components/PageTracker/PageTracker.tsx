@@ -7,7 +7,7 @@ interface PageTrackerProps {
 }
 
 const PageTracker = ({ children }: PageTrackerProps) => {
-    const key = env.NEXT_PUBLIC_APIKEY?? null;
+    const key = env.APIKEY?? null;
   return <Tracker apiKey={key}>{children}</Tracker>;
 };
 

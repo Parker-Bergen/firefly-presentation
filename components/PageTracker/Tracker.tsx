@@ -21,13 +21,14 @@ const Tracker = ({ children, apiKey }: TrackerProps) => {
           ip: ip,
           key: apiKey,
         };
+        console.log(visitData);
         fetch("api/logging", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(visitData),
-        })
+        }).then((e)=> console.log(e))
       });
     }
   }, [apiKey]);

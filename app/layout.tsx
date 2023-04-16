@@ -1,6 +1,7 @@
 import PageTracker from "../components/PageTracker/PageTracker";
 import "./globals.css";
 import StyledComponentsRegistry from "../lib/registry";
+import { PageSectionProvider } from "../components/PageSection/PageSection";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <StyledComponentsRegistry>
       <PageTracker>
+        <PageSectionProvider>
         <html lang="en">
           <body>{children}</body>
         </html>
+        </PageSectionProvider>
       </PageTracker>
     </StyledComponentsRegistry>
   );

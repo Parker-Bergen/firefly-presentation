@@ -9,6 +9,7 @@ export async function POST(request: NextRequest) {
     if (request.headers.get("content-type")?.includes("application/json")) {
       const requestBody = await request.json();
       //console.log(requestBody);
+      return new Response(`Key: ${requestBody.key}, ENV: ${env.APIKEY}, Body: ${requestBody !==null}`);
       if (requestBody !== null && requestBody.key === env.APIKEY) {
         const logData = {
           broswer: requestBody.browser,

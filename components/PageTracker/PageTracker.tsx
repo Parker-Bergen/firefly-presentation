@@ -8,7 +8,6 @@ interface PageTrackerProps {
 
 const PageTracker = ({ children }: PageTrackerProps) => {
     const key = env.APIKEY?? null;
-    console.log("Key", key);
   return <Tracker apiKey={key}>{children}</Tracker>;
 };
 

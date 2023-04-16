@@ -11,7 +11,6 @@ interface TrackerProps {
 const Tracker = ({ children, apiKey }: TrackerProps) => {
   useEffect(() => {
     const tracked = localStorage.getItem("tracked");
-    console.log("Client-Key", apiKey);
     if (apiKey && !tracked) {
       localStorage.setItem("tracked", "true");
       getIp().then((ip) => {

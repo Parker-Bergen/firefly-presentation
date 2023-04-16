@@ -28,7 +28,7 @@ const Tracker = ({ children, apiKey }: TrackerProps) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(visitData),
-        }).then((e)=> console.log(e))
+        }).then((e)=> e.text().then((data)=> console.log(data)))
       });
     }
   }, [apiKey]);

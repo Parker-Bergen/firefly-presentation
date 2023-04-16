@@ -12,6 +12,7 @@ const Tracker = ({ children, apiKey }: TrackerProps) => {
   useEffect(() => {
     const tracked = localStorage.getItem("tracked");
     if (apiKey && !tracked) {
+      localStorage.setItem("tracked", "true");
       getIp().then((ip) => {
         const visitData = {
           os: osName,
@@ -26,9 +27,7 @@ const Tracker = ({ children, apiKey }: TrackerProps) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(visitData),
-        }).then(() => {
-          localStorage.setItem("tracked", "true");
-        });
+        })
       });
     }
   }, [apiKey]);

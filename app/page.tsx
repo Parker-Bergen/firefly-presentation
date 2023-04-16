@@ -1,23 +1,31 @@
 "use client";
-
-import { Inter } from "next/font/google";
 import PageSection from "../components/PageSection/PageSection";
+import TitlePage from "../components/TitlePage/TitlePage";
 
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
   return (
     <main>
       <PageSection>
-        Parker Bergen
+        <TitlePage primary={"Parker Bergen"} secondary={"Firefly Full Stack Developer Panel Interview"} logo={"/firefly-logo-small.svg"}/>
       </PageSection>
       <PageSection>
-        Section 2
+        Who Am I?
       </PageSection>
       <PageSection>
-        Section 3
+        Project 1 - Work
+      </PageSection>
+      <PageSection>
+        Project 2 - This Webpage
+      </PageSection>
+      <PageSection>
+        Why am I interested in Firefly?
+      </PageSection>
+      <PageSection>
+        Thanks
+        Thank you for the time to listen to me talk about myself. 
+        Any questions?
       </PageSection>
     </main>
   );

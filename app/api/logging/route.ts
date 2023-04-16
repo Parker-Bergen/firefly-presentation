@@ -8,9 +8,8 @@ export async function POST(request: NextRequest) {
     // Check if the request has a valid content type before parsing JSON
     if (request.headers.get("content-type")?.includes("application/json")) {
       const requestBody = await request.json();
-      //console.log(requestBody);
-      return new Response(`Key: ${requestBody.key}, ENV: ${env.APIKEY}, Body: ${requestBody !==null}`);
-      if (requestBody !== null && requestBody.key === env.APIKEY) {
+      return new Response(`Key: ${requestBody.key}, ENV: ${env.NEXT_PUBLIC_APIKEY}, Body: ${requestBody !==null}`);
+      if (requestBody !== null && requestBody.key === env.NEXT_PUBLIC_APIKEY) {
         const logData = {
           broswer: requestBody.browser,
           device: requestBody.device,

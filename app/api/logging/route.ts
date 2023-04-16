@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
   const query = request.nextUrl.searchParams;
   if (query) {
     const key = query.get("key");
-    if (key === env.APIKEY) {
+    if (key === process.env.APIKEY) {
       const data = await prisma.log.findMany();
       //console.log(data);
       return new Response(JSON.stringify(data));

@@ -1,5 +1,6 @@
 "use client";
 import {
+  Key,
   ReactNode,
   createContext,
   useCallback,
@@ -16,65 +17,105 @@ interface PageSectionProps {
 
 const PageSection = ({ children }: PageSectionProps) => {
   const { clientHeight } = useContext(PageSectionContext);
-    return (
-        <PageSectionWrapper height={`${clientHeight}px`}>
-          {children}
-        </PageSectionWrapper>
-      );
+  return (
+    <PageSectionWrapper height={`${clientHeight}px`}>
+      {children}
+    </PageSectionWrapper>
+  );
 };
 
-const PageSectionProvider = ({ children }: PageSectionProps) => {
-  const [clientHeight, setClientHeight] = useState<number | null>(null);
+interface PageSectionProviderProps {
+  children: ReactNode;
+}
 
-  const resize = useCallback((e: any) => {
-    //console.log(e.target.innerHeight);
-    setClientHeight(e.target.innerHeight);
+const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
+  const [clientHeight, setClientHeight] = useState<number | null>(null);
+  const [section, setCurrentSection] = useState(0);
+
+  const setSection = useCallback((increment: number) => {
+    const sections = document.getElementsByTagName("section");
+    setCurrentSection((state) => {
+      return Math.max(Math.min(sections.length - 1, state + increment), 0);
+    });
   }, []);
 
-  const keyDown = useCallback((e: any) => {
-    e.preventDefault();
-    const scrollVal = clientHeight?? 0;
-    //console.log(scrollVal);
-    switch(e.key){
-        case "ArrowUp": scrollBy({top: -scrollVal, behavior: "smooth"}); break;
-        case "ArrowDown": scrollBy({top: scrollVal, behavior: "smooth"}); break;
-        default: break;
-    }
-  }, [clientHeight]);
+  const scrollToCurrentSection = useCallback(
+    (smooth = true) => {
+      const sections = document.getElementsByTagName("section");
+      sections[section].scrollIntoView({ behavior: smooth ? "smooth" : undefined });
+    },
+    [section]
+  );
 
-  const scrollWheel = useCallback((e: any) => {
-    e.preventDefault();
-    const scrollVal = clientHeight?? 0;
-    console.log(e);
-    if(e.deltaY < 0){
-        scrollBy({top: -scrollVal, behavior: "smooth"});
-    } else {
-        scrollBy({top: scrollVal, behavior: "smooth"});
-    }
-  }, [clientHeight]);
+  const resize = useCallback(
+    (e: any) => {
+      setClientHeight(e.target.innerHeight);
+      scrollToCurrentSection(false);
+    },
+    [scrollToCurrentSection]
+  );
+
+  useEffect(() => {
+    scrollToCurrentSection();
+  }, [scrollToCurrentSection]);
+
+  const keyDown = useCallback(
+    (e: any) => {
+      e.preventDefault();
+      switch (e.key) {
+        case "ArrowUp":
+          setSection(-1);
+          break; 
+        case "ArrowDown":
+          setSection(1);
+          break; 
+        default:
+          break;
+      }
+    },
+    [setSection]
+  );
+
+  const scrollWheel = useCallback(
+    (e: any) => {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        setSection(-1);
+      } else {
+        setSection(1);
+      }
+    },
+    [setSection]
+  );
 
   useEffect(() => {
     setClientHeight(window.innerHeight);
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", (e) => resize(e));
-    return window.removeEventListener("resize", (e) => resize(e));
+    window.addEventListener("resize", resize);
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
   }, [resize]);
 
-  useEffect(()=> {
-    window.addEventListener("keydown", (e)=> {keyDown(e)});
-    return window.removeEventListener("keydown", (e)=> {keyDown(e)});
-  }, [keyDown])
+  useEffect(() => {
+    window.addEventListener("keydown", keyDown);
+    return () => {
+      window.removeEventListener("keydown", keyDown);
+    };
+  }, [keyDown]);
 
-  useEffect(()=> {
-    window.addEventListener("wheel", (e)=> {scrollWheel(e)}, {passive: false});
-    return window.removeEventListener("wheel", (e)=> {scrollWheel(e)});
-  }, [scrollWheel])
+  useEffect(() => {
+    window.addEventListener("wheel", scrollWheel, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", scrollWheel);
+    };
+  }, [scrollWheel]);
 
   return (
     <PageSectionContext.Provider value={{ clientHeight: clientHeight }}>
-        {children}
+      {children}
     </PageSectionContext.Provider>
   );
 };

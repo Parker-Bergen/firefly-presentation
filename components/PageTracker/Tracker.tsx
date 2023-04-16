@@ -1,15 +1,14 @@
 "use client";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import getIp from "./getIp";
 import { browserName, deviceType, osName } from "react-device-detect";
 
-const Tracker = ({
-  children,
-  apiKey,
-}: {
-  children: React.ReactNode;
+interface TrackerProps {
+  children: ReactNode;
   apiKey: String | null;
-}) => {
+}
+
+const Tracker = ({ children, apiKey }: TrackerProps) => {
   useEffect(() => {
     const tracked = localStorage.getItem("tracked");
     if (apiKey && !tracked) {
@@ -28,7 +27,7 @@ const Tracker = ({
           },
           body: JSON.stringify(visitData),
         }).then(() => {
-            localStorage.setItem('tracked', "true");
+          localStorage.setItem("tracked", "true");
         });
       });
     }

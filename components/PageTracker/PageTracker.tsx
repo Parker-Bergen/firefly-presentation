@@ -1,7 +1,12 @@
 import { env } from "process";
 import Tracker from "./Tracker";
+import { ReactNode } from "react";
 
-const PageTracker = ({ children }: { children: React.ReactNode }) => {
+interface PageTrackerProps {
+  children: ReactNode
+}
+
+const PageTracker = ({ children }: PageTrackerProps) => {
     const key = env.APIKEY?? null;
   return <Tracker apiKey={key}>{children}</Tracker>;
 };

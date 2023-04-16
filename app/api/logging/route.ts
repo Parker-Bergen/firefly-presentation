@@ -7,8 +7,7 @@ export async function POST(request: NextRequest) {
     // Check if the request has a valid content type before parsing JSON
     if (request.headers.get("content-type")?.includes("application/json")) {
       const requestBody = await request.json();
-      return new Response(`Key: ${requestBody.key}, ENV: ${process.env.NEXT_PUBLIC_APIKEY}, Body: ${requestBody !==null}`);
-      if (requestBody !== null && requestBody.key === process.env.APIKEY) {
+      if (requestBody !== null && requestBody.key === process.env.NEXT_PUBLIC_APIKEY) {
         const logData = {
           broswer: requestBody.browser,
           device: requestBody.device,
@@ -37,7 +36,7 @@ export async function GET(request: NextRequest) {
   const query = request.nextUrl.searchParams;
   if (query) {
     const key = query.get("key");
-    if (key === process.env.APIKEY) {
+    if (key === process.env.NEXT_PUBLIC_APIKEY) {
       const data = await prisma.log.findMany();
       //console.log(data);
       return new Response(JSON.stringify(data));

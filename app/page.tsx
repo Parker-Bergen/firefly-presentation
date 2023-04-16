@@ -16,6 +16,9 @@ export default function Home() {
       <PageSection>
         Section 2
       </PageSection>
+      <PageSection>
+        Section 3
+      </PageSection>
     </main>
   );
 }

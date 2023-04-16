@@ -1,12 +1,10 @@
 "use client";
 import {
-  Key,
   ReactNode,
   createContext,
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 import { PageSectionWrapper } from "./PageSectionStyles";

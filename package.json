@@ -19,14 +19,20 @@
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
+    "react-is": "^18.2.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "prisma": "^4.12.0",
     "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.0.7"
+    "babel-plugin-styled-components": "^2.0.7",
+    "prisma": "^4.12.0"
   },
   "resolutions": {
     "styled-components": "^5"
+  },
+  "dependenciesMeta": {
+    "next@13.0.6": {
+      "unplugged": true
+    }
   }
 }

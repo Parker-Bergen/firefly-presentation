@@ -1,3 +1,4 @@
+'use client'
 import PageTracker from "../components/PageTracker/PageTracker";
 import "./globals.css";
 import StyledComponentsRegistry from "../lib/registry";

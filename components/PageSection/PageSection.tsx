@@ -28,6 +28,7 @@ interface PageSectionProviderProps {
 
 const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
   const [clientHeight, setClientHeight] = useState<number | null>(null);
+  const [clientWidth, setClientWidth] = useState<number | null>(null);
   const [section, setCurrentSection] = useState(0);
 
   const setSection = useCallback((increment: number) => {
@@ -48,6 +49,7 @@ const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
   const resize = useCallback(
     (e: any) => {
       setClientHeight(e.target.innerHeight);
+      setClientWidth(e.target.innerWidth);
       scrollToCurrentSection(false);
     },
     [scrollToCurrentSection]
@@ -88,6 +90,7 @@ const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
 
   useEffect(() => {
     setClientHeight(window.innerHeight);
+    setClientWidth(window.innerWidth);
   }, []);
 
   useEffect(() => {
@@ -112,7 +115,7 @@ const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
   }, [scrollWheel]);
 
   return (
-    <PageSectionContext.Provider value={{ clientHeight: clientHeight }}>
+    <PageSectionContext.Provider value={{ clientHeight: clientHeight, clientWidth: clientWidth }}>
       {children}
     </PageSectionContext.Provider>
   );
@@ -120,10 +123,12 @@ const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
 
 type PageSectionContextProps = {
   clientHeight: null | number;
+  clientWidth: null | number;
 };
 
 const PageSectionContext = createContext<PageSectionContextProps>({
   clientHeight: null,
+  clientWidth: null
 });
 
 export { PageSectionContext, PageSectionProvider };

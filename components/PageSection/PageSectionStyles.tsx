@@ -8,6 +8,7 @@ type PageSectionProps = {
 
 const PageSectionWrapper = styled.section<PageSectionProps>`
     height: ${props => props.height};
+    overflow: hidden;
 `;
 
 export {PageSectionWrapper};

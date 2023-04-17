@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import {
   Logo,
   Primary,
+  PrimaryText,
   Secondary,
   Separator,
   TitlePageContainer,
@@ -18,7 +19,7 @@ const TitlePage = ({ primary, secondary, logo }: TitlePageProps) => {
     <TitlePageContainer>
       <Primary>
         {logo && <Logo src={logo} alt="Firefly Logo" width={50} height={50} />}
-        {primary}
+        <PrimaryText>{primary}</PrimaryText>
       </Primary>
       <Separator />
       <Secondary>{secondary}</Secondary>

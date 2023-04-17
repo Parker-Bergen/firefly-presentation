@@ -8,7 +8,7 @@ import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { AiFillRobot } from "react-icons/ai";
 import { MdWork } from "react-icons/md";
-import { Bubble, PageTitle } from "../styles/styles";
+import { Bubble, PageDescription, PageTitle } from "../styles/styles";
 import { ExpandableImage } from "../components/ExpandableImage/ExpandableImage";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
 import IconLayout from "../components/IconLayout/IconLayout";
@@ -25,7 +25,13 @@ export default function Home() {
       </PageSection>
       <PageSection>
         <PageTitle>About Me</PageTitle>
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Bubble>
             <Image src="/Me.jpg" alt="Parker Bergen" width="300" height="300" />
           </Bubble>
@@ -36,9 +42,10 @@ export default function Home() {
               icon: <RiComputerFill key={"Programmer"} />,
               text: (
                 <div>
-                  My true passion is programming. I enjoy learning new languages
-                  and concepts by doing little projects and bringing as many
-                  concepts as I can to work
+                  My true passion is programming! I have programmed since I was
+                  8, starting with summer courses. I enjoy learning new
+                  languages and concepts by doing little projects and bringing
+                  as many concepts as I can to work
                 </div>
               ),
             },
@@ -143,79 +150,82 @@ export default function Home() {
           mediaLayout={[
             {
               media: {
-                name: "LMSC Diagram",
-                path: "/ndt-project/analytics.png",
+                name: "NDT Analytics",
+                path: "/ndt-project/web/analytics.png",
               },
               rowSpan: 1,
               colSpan: 2,
             },
             {
               media: {
-                name: "LMSC Admin Panel",
-                path: "/ndt-project/ticket-system.png",
+                name: "NDT Ticket System",
+                path: "/ndt-project/web/ticket-system.png",
               },
               rowSpan: 1,
               colSpan: 2,
             },
             {
               media: {
-                name: "LMSC Color Picker",
-                path: "/ndt-project/user-search.png",
+                name: "NDT User Search",
+                path: "/ndt-project/web/user-search.png",
               },
               rowSpan: 1,
               colSpan: 2,
             },
             {
               media: {
-                name: "LMSC Work Analytics",
-                path: "/ndt-project/course.png",
+                name: "NDT User Course",
+                path: "/ndt-project/web/course.png",
               },
               rowSpan: 1,
               colSpan: 2,
-            }
+            },
+            {
+              media: {
+                name: "NDT App",
+                path: "/ndt-project/app/app-store.png",
+              },
+              rowSpan: 1,
+              colSpan: 1,
+            },
           ]}
         />
       </PageSection>
       <PageSection>
         <PageTitle>NXP Semiconductor</PageTitle>
-        <MediaCollage
-          rows={2}
-          cols={6}
-          mediaLayout={[
-            {
-              media: {
-                name: "LMSC Diagram",
-                path: "/ndt-project/analytics.png",
+        <div style={{ width: "25%" }}>
+          <MediaCollage
+            rows={1}
+            cols={3}
+            mediaLayout={[
+              {
+                media: {
+                  name: "NXP Engine",
+                  path: "/nxp-project/engine-motor.jpeg",
+                },
+                rowSpan: 1,
+                colSpan: 3,
               },
-              rowSpan: 1,
-              colSpan: 2,
-            },
-            {
-              media: {
-                name: "LMSC Admin Panel",
-                path: "/ndt-project/ticket-system.png",
-              },
-              rowSpan: 1,
-              colSpan: 2,
-            },
-            {
-              media: {
-                name: "LMSC Color Picker",
-                path: "/ndt-project/user-search.png",
-              },
-              rowSpan: 1,
-              colSpan: 2,
-            },
-            {
-              media: {
-                name: "LMSC Work Analytics",
-                path: "/ndt-project/course.png",
-              },
-              rowSpan: 1,
-              colSpan: 2,
-            }
-          ]}
-        />
+            ]}
+          />
+        </div>
+        <PageDescription>
+          <ul>
+            <li>Predictive engine maintanence</li>
+            <li>Ran android on a NXP I.MX8 microcontroller</li>
+            <li>Comunicated with a sensor array using BLE</li>
+            <li>Programmed a dashboard that showed warnings</li>
+            <li>
+              Used machine learning trained on negative sounds to determine
+              issues
+            </li>
+            <li>Used a camera to detect fire</li>
+            <li>
+              Was a proof of concept to hopefully implement into trucks and
+              boats
+            </li>
+          </ul>
+        </PageDescription>
       </PageSection>
       <PageSection>
         <PageTitle>Other Projects I Have Done</PageTitle>
@@ -224,9 +234,12 @@ export default function Home() {
         <PageTitle>Why am I interested in Firefly?</PageTitle>
       </PageSection>
       <PageSection>
-        <PageTitle>Why am I interested in Firefly?</PageTitle>
-        Thanks Thank you for the time to listen to me talk about myself. Any
-        questions?
+        <PageTitle>
+          Thank you for the taking the time to listen to me talk about myself.
+        </PageTitle>
+        <PageTitle>
+          Any questions? I love to talk more about the projects I have done!
+        </PageTitle>
       </PageSection>
     </main>
   );

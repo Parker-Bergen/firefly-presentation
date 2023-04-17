@@ -8,6 +8,9 @@ import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { AiFillRobot } from "react-icons/ai";
 import { MdWork } from "react-icons/md";
+import { PageTitle } from "../styles/styles";
+import { ExpandableImage } from "../components/ExpandableImage/ExpandableImage";
+import MediaCollage from "../components/MediaCollage/MediaCollage";
 
 export default function Home() {
   return (
@@ -20,6 +23,7 @@ export default function Home() {
         />
       </PageSection>
       <PageSection>
+        <PageTitle>About Me</PageTitle>
         <IconWeb
           icons={[
             {
@@ -27,10 +31,11 @@ export default function Home() {
               text: (
                 <>
                   <div>My true passion is programming.</div>
-                  <div>I enjoy learning new languages
-                  and concepts by</div>
-                  <div>doing little projects and bringing as many
-                  concepts as I can to work</div>
+                  <div>I enjoy learning new languages and concepts by</div>
+                  <div>
+                    doing little projects and bringing as many concepts as I can
+                    to work
+                  </div>
                 </>
               ),
             },
@@ -72,7 +77,63 @@ export default function Home() {
           <Image src="/Me.jpg" alt="Parker Bergen" width="300" height="300" />
         </IconWeb>
       </PageSection>
-      <PageSection>Project 1 - Work</PageSection>
+      <PageSection>
+        <PageTitle>Work Project</PageTitle>
+        <MediaCollage
+        rows={4}
+        cols={8}
+          mediaLayout={[
+            {
+              media: {
+                name: "LMSC Diagram",
+                path: "/work-project/work-servers-diagram.svg",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Admin Panel",
+                path: "/work-project/work-admin-panel.PNG",
+              },
+              rowSpan: 1,
+              colSpan: 3,
+            },
+            {
+              media: {
+                name: "LMSC Color Picker",
+                path: "/work-project/work-color-picker.PNG",
+              },
+              rowSpan: 1,
+              colSpan: 3,
+            },
+            {
+              media: {
+                name: "LMSC Work Analytics",
+                path: "/work-project/work-data.PNG",
+              },
+              rowSpan: 1,
+              colSpan: 3,
+            },
+            {
+              media: {
+                name: "LMSC Course Library",
+                path: "/work-project/work-course-library.PNG",
+              },
+              rowSpan: 1,
+              colSpan: 3,
+            },
+            {
+              media: {
+                name: "LMSC Course",
+                path: "/work-project/work-course.PNG",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+          ]}
+        />
+      </PageSection>
       <PageSection>Project 2 - This Webpage</PageSection>
       <PageSection>Why am I interested in Firefly?</PageSection>
       <PageSection>

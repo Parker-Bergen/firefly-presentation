@@ -39,6 +39,7 @@ const IconBubbleWrapper = styled(Bubble)<IconBubbleProps>`
     font-size: 40px;
     padding: 20px;
     overflow: visible;
+    cursor: pointer;
 `;
 
 const BubbleText = styled.div`

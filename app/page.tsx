@@ -7,7 +7,7 @@ import PageSection, {
 import TitlePage from "../components/TitlePage/TitlePage";
 import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
-import { AiFillRobot } from "react-icons/ai";
+import { BiCodeCurly } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { IoMdSchool } from "react-icons/io";
@@ -67,15 +67,30 @@ export default function Home() {
               {
                 icon: <RiGamepadFill key={"Gamer"} />,
                 text: (
-                  <div>I play FPS, Sandbox, RPG, Racing and Puzzle Games</div>
+                  <>
+                    <div>I play FPS, Sandbox, RPG, Racing and Puzzle Games</div>
+                    <div>
+                      I have a hobby to design and build IOT and robotic systems
+                    </div>
+                  </>
                 ),
               },
               {
-                icon: <AiFillRobot key={"Robot"} />,
+                icon: <BiCodeCurly key={"Languages"} />,
                 text: (
-                  <div>
-                    I have a hobby to design and build IOT and robotic systems
-                  </div>
+                  <>
+                    <div>JavaScript - React</div>
+                    <div>C++</div>
+                    <div>HTML / CSS</div>
+                    <div>PHP</div>
+                    <div>Labview</div>
+                    <div>Dart</div>
+                    <div>Linux (Many Flavors)</div>
+                    <div>AWS Suite</div>
+                    <div>MySQL</div>
+                    <div>Many More...</div>
+                    <div>Large Variety Of Software Tools</div>
+                  </>
                 ),
               },
               {
@@ -336,8 +351,14 @@ export default function Home() {
                 be more perfect than conditions for launch
               </li>
               <li>I thrive in a fast pace innovated enviroment</li>
-              <li>I want to work for a company that creates cutting edge technology</li>
-              <li>There is so much room for my own growth and development in the company</li>
+              <li>
+                I want to work for a company that creates cutting edge
+                technology
+              </li>
+              <li>
+                There is so much room for my own growth and development in the
+                company
+              </li>
             </ul>
           </PageDescription>
         </PopInAnimation>

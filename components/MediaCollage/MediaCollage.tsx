@@ -1,9 +1,7 @@
 "use client";
 import React, {
   ReactEventHandler,
-  ReactNode,
   useCallback,
-  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -18,7 +16,6 @@ import {
 
 } from "./MediaCollageStyles";
 import { findVideoType } from "./MediaCollageUtils";
-import { useRouter } from "next/navigation";
 
 
 type Media = {
@@ -89,14 +86,13 @@ const MediaCollageChild = ({
   colSpan,
 }: MediaCollageChildProps) => {
   const [hover, setHover] = useState(false);
-  const router = useRouter();
 
   const handleClick = useCallback(
     (media: Media) => {
-      if(media.link) router.push(media.link)
+      if(media.link) window.open(media.link, "_blank")
       else if (setSelected) setSelected(media);
     },
-    [router, setSelected]
+    [setSelected]
   );
 
   return (

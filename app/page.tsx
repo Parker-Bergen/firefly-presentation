@@ -1,18 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
-import IconWeb from "../components/IconWeb/IconWeb";
 import PageSection from "../components/PageSection/PageSection";
 import TitlePage from "../components/TitlePage/TitlePage";
 import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { AiFillRobot } from "react-icons/ai";
 import { MdWork } from "react-icons/md";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Bubble, PageDescription, PageTitle } from "../styles/styles";
-import { ExpandableImage } from "../components/ExpandableImage/ExpandableImage";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
 import IconLayout from "../components/IconLayout/IconLayout";
-import Link from "next/link";
+import LinkIcon from "../components/LinkIcon/LinkIcon";
 
 export default function Home() {
   return (
@@ -286,6 +285,14 @@ export default function Home() {
         <PageTitle>
           Any questions? I love to talk more about the projects I have done!
         </PageTitle>
+        <PageDescription>
+          <LinkIcon href={"https://github.com/Parker-Bergen"}>
+            <BsGithub />
+          </LinkIcon>
+          <LinkIcon href={"https://www.linkedin.com/in/parker-bergen/"}>
+            <BsLinkedin />
+          </LinkIcon>
+        </PageDescription>
       </PageSection>
     </main>
   );

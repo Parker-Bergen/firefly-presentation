@@ -8,9 +8,10 @@ import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { AiFillRobot } from "react-icons/ai";
 import { MdWork } from "react-icons/md";
-import { PageTitle } from "../styles/styles";
+import { Bubble, PageTitle } from "../styles/styles";
 import { ExpandableImage } from "../components/ExpandableImage/ExpandableImage";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
+import IconLayout from "../components/IconLayout/IconLayout";
 
 export default function Home() {
   return (
@@ -24,28 +25,30 @@ export default function Home() {
       </PageSection>
       <PageSection>
         <PageTitle>About Me</PageTitle>
-        <IconWeb
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+          <Bubble>
+            <Image src="/Me.jpg" alt="Parker Bergen" width="300" height="300" />
+          </Bubble>
+        </div>
+        <IconLayout
           icons={[
             {
               icon: <RiComputerFill key={"Programmer"} />,
               text: (
-                <>
-                  <div>My true passion is programming.</div>
-                  <div>I enjoy learning new languages and concepts by</div>
-                  <div>
-                    doing little projects and bringing as many concepts as I can
-                    to work
-                  </div>
-                </>
+                <div>
+                  My true passion is programming. I enjoy learning new languages
+                  and concepts by doing little projects and bringing as many
+                  concepts as I can to work
+                </div>
               ),
             },
             {
               icon: <GiElectric key={"Electrical"} />,
               text: (
-                <>
-                  <div>I always wonder how things work when I see them,</div>
-                  <div>both mechanically and electrically</div>
-                </>
+                <div>
+                  I always wonder how things work when I see them, both
+                  mechanically and electrically
+                </div>
               ),
             },
             {
@@ -73,20 +76,18 @@ export default function Home() {
               ),
             },
           ]}
-        >
-          <Image src="/Me.jpg" alt="Parker Bergen" width="300" height="300" />
-        </IconWeb>
+        />
       </PageSection>
       <PageSection>
-        <PageTitle>Work Project</PageTitle>
+        <PageTitle>Current Work</PageTitle>
         <MediaCollage
-        rows={4}
-        cols={8}
+          rows={2}
+          cols={8}
           mediaLayout={[
             {
               media: {
                 name: "LMSC Diagram",
-                path: "/work-project/work-servers-diagram.svg",
+                path: "/lmsc-project/work-servers-diagram.svg",
               },
               rowSpan: 1,
               colSpan: 2,
@@ -94,7 +95,7 @@ export default function Home() {
             {
               media: {
                 name: "LMSC Admin Panel",
-                path: "/work-project/work-admin-panel.PNG",
+                path: "/lmsc-project/work-admin-panel.PNG",
               },
               rowSpan: 1,
               colSpan: 3,
@@ -102,7 +103,7 @@ export default function Home() {
             {
               media: {
                 name: "LMSC Color Picker",
-                path: "/work-project/work-color-picker.PNG",
+                path: "/lmsc-project/work-color-picker.PNG",
               },
               rowSpan: 1,
               colSpan: 3,
@@ -110,7 +111,7 @@ export default function Home() {
             {
               media: {
                 name: "LMSC Work Analytics",
-                path: "/work-project/work-data.PNG",
+                path: "/lmsc-project/work-data.PNG",
               },
               rowSpan: 1,
               colSpan: 3,
@@ -118,7 +119,7 @@ export default function Home() {
             {
               media: {
                 name: "LMSC Course Library",
-                path: "/work-project/work-course-library.PNG",
+                path: "/lmsc-project/work-course-library.PNG",
               },
               rowSpan: 1,
               colSpan: 3,
@@ -126,7 +127,7 @@ export default function Home() {
             {
               media: {
                 name: "LMSC Course",
-                path: "/work-project/work-course.PNG",
+                path: "/lmsc-project/work-course.PNG",
               },
               rowSpan: 1,
               colSpan: 2,
@@ -134,9 +135,96 @@ export default function Home() {
           ]}
         />
       </PageSection>
-      <PageSection>Project 2 - This Webpage</PageSection>
-      <PageSection>Why am I interested in Firefly?</PageSection>
       <PageSection>
+        <PageTitle>National Driver Training</PageTitle>
+        <MediaCollage
+          rows={2}
+          cols={6}
+          mediaLayout={[
+            {
+              media: {
+                name: "LMSC Diagram",
+                path: "/ndt-project/analytics.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Admin Panel",
+                path: "/ndt-project/ticket-system.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Color Picker",
+                path: "/ndt-project/user-search.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Work Analytics",
+                path: "/ndt-project/course.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            }
+          ]}
+        />
+      </PageSection>
+      <PageSection>
+        <PageTitle>NXP Semiconductor</PageTitle>
+        <MediaCollage
+          rows={2}
+          cols={6}
+          mediaLayout={[
+            {
+              media: {
+                name: "LMSC Diagram",
+                path: "/ndt-project/analytics.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Admin Panel",
+                path: "/ndt-project/ticket-system.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Color Picker",
+                path: "/ndt-project/user-search.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            },
+            {
+              media: {
+                name: "LMSC Work Analytics",
+                path: "/ndt-project/course.png",
+              },
+              rowSpan: 1,
+              colSpan: 2,
+            }
+          ]}
+        />
+      </PageSection>
+      <PageSection>
+        <PageTitle>Other Projects I Have Done</PageTitle>
+      </PageSection>
+      <PageSection>
+        <PageTitle>Why am I interested in Firefly?</PageTitle>
+      </PageSection>
+      <PageSection>
+        <PageTitle>Why am I interested in Firefly?</PageTitle>
         Thanks Thank you for the time to listen to me talk about myself. Any
         questions?
       </PageSection>

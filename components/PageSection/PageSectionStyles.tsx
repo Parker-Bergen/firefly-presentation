@@ -8,6 +8,11 @@ type PageSectionProps = {
 
 const PageSectionWrapper = styled.section<PageSectionProps>`
     height: ${props => props.height};
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
     overflow: hidden;
 `;
 

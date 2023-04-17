@@ -372,10 +372,10 @@ export default function Home() {
       </PageSection>
       <PageSection>
         <PageTitle>
-          Thank you for the taking the time to listen to me talk about myself.
+          Thank you for taking the time to listen.
         </PageTitle>
         <PageTitle>
-          Any questions? I love to talk more about the projects I have done!
+          Any questions? I would love to talk more about the projects I have done!
         </PageTitle>
         <PageDescription>
           <LinkIcon href={"https://github.com/Parker-Bergen"}>

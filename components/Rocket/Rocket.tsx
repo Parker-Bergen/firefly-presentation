@@ -1,7 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { Flame, ResetButton, RocketContainer, RocketWrapper } from "./RocketStyles";
+import {
+  Flame,
+  ResetButton,
+  RocketContainer,
+  RocketWrapper,
+} from "./RocketStyles";
 import { AnimatePresence } from "framer-motion";
 
 const Rocket = () => {
@@ -9,7 +14,7 @@ const Rocket = () => {
   const [height] = useState(600);
 
   return (
-    <RocketContainer width={height/4}>
+    <RocketContainer width={height / 4}>
       <RocketWrapper
         onClick={() => setBlasted(true)}
         transition={{ duration: 10 }}

@@ -12,6 +12,7 @@ import { Bubble, PageDescription, PageTitle } from "../styles/styles";
 import { ExpandableImage } from "../components/ExpandableImage/ExpandableImage";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
 import IconLayout from "../components/IconLayout/IconLayout";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -237,6 +238,42 @@ export default function Home() {
       </PageSection>
       <PageSection>
         <PageTitle>Other Projects I Have Done</PageTitle>
+        <div style={{ width: "50%" }}>
+          <MediaCollage
+            rows={1}
+            cols={6}
+            mediaLayout={[
+              {
+                media: {
+                  name: "Drone Website",
+                  path: "/other-projects/drone-site.PNG",
+                  link: "https://dronedev.parkerbergen.dev",
+                },
+                rowSpan: 1,
+                colSpan: 3,
+              },
+              {
+                media: {
+                  name: "Esp8266 Websocket Camera",
+                  path: "/other-projects/vision-cam.PNG",
+                  link: "https://vision.parkerbergen.dev",
+                },
+                rowSpan: 1,
+                colSpan: 3,
+              },
+            ]}
+          />
+        </div>
+        <PageDescription>
+          <ul>
+            <li>Secret Residential Robotics Product</li>
+            <li>ESP8266 Smart Light Switch</li>
+            <li>Infinia Studios Website</li>
+            <li>Atlas MC Website</li>
+            <li>SACOT Website</li>
+            <li>CROMA Website</li>
+          </ul>
+        </PageDescription>
       </PageSection>
       <PageSection>
         <PageTitle>Why am I interested in Firefly?</PageTitle>

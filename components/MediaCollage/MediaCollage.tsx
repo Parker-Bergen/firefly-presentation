@@ -18,11 +18,13 @@ import {
 
 } from "./MediaCollageStyles";
 import { findVideoType } from "./MediaCollageUtils";
+import { useRouter } from "next/navigation";
 
 
 type Media = {
   name: string;
   path: string;
+  link?: string;
 };
 
 type MediaLayout = {
@@ -87,12 +89,14 @@ const MediaCollageChild = ({
   colSpan,
 }: MediaCollageChildProps) => {
   const [hover, setHover] = useState(false);
+  const router = useRouter();
 
   const handleClick = useCallback(
     (media: Media) => {
-      if (setSelected) setSelected(media);
+      if(media.link) router.push(media.link)
+      else if (setSelected) setSelected(media);
     },
-    [setSelected]
+    [router, setSelected]
   );
 
   return (

@@ -87,7 +87,7 @@ export default function Home() {
                 icon: <RiGamepadFill key={"Gamer"} />,
                 text: (
                   <>
-                    <div>I play Sandbox, RPG, FPS, Racing and Puzzle Games</div>
+                    <div>I enjoy Sandbox, RPG, FPS, Racing and Puzzle Games</div>
                     <div>
                       I have a hobby to design and build IOT and robotic systems
                     </div>

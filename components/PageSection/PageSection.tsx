@@ -115,7 +115,7 @@ const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
   }, [scrollWheel]);
 
   return (
-    <PageSectionContext.Provider value={{ clientHeight: clientHeight, clientWidth: clientWidth }}>
+    <PageSectionContext.Provider value={{ clientHeight: clientHeight, clientWidth: clientWidth, section: section }}>
       {children}
     </PageSectionContext.Provider>
   );
@@ -124,11 +124,13 @@ const PageSectionProvider = ({ children }: PageSectionProviderProps) => {
 type PageSectionContextProps = {
   clientHeight: null | number;
   clientWidth: null | number;
+  section: number;
 };
 
 const PageSectionContext = createContext<PageSectionContextProps>({
   clientHeight: null,
-  clientWidth: null
+  clientWidth: null,
+  section: 0,
 });
 
 export { PageSectionContext, PageSectionProvider };

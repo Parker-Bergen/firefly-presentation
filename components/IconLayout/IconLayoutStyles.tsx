@@ -23,7 +23,6 @@ const IconBubbleWrapper = styled(Bubble)`
     font-size: 40px;
     padding: 20px;
     overflow: visible;
-    cursor: pointer;
     justify-self: center;
 `;
 

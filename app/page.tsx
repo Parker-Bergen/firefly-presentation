@@ -1,17 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
-import PageSection from "../components/PageSection/PageSection";
+import PageSection, {
+  PageSectionContext,
+} from "../components/PageSection/PageSection";
 import TitlePage from "../components/TitlePage/TitlePage";
 import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { AiFillRobot } from "react-icons/ai";
 import { MdWork } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { IoMdSchool } from "react-icons/io";
 import { Bubble, PageDescription, PageTitle } from "../styles/styles";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
 import IconLayout from "../components/IconLayout/IconLayout";
 import LinkIcon from "../components/LinkIcon/LinkIcon";
+import { ReactNode, useContext, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   return (
@@ -36,54 +41,68 @@ export default function Home() {
             <Image src="/Me.jpg" alt="Parker Bergen" width="300" height="300" />
           </Bubble>
         </div>
-        <IconLayout
-          icons={[
-            {
-              icon: <RiComputerFill key={"Programmer"} />,
-              text: (
-                <div>
-                  My true passion is programming! I have programmed since I was
-                  8, starting with summer courses. I enjoy learning new
-                  languages and concepts by doing little projects and bringing
-                  as many concepts as I can to work
-                </div>
-              ),
-            },
-            {
-              icon: <GiElectric key={"Electrical"} />,
-              text: (
-                <div>
-                  I always wonder how things work when I see them, both
-                  mechanically and electrically
-                </div>
-              ),
-            },
-            {
-              icon: <RiGamepadFill key={"Gamer"} />,
-              text: <div>I play FPS, Sandbox, RPG and Puzzle Games</div>,
-            },
-            {
-              icon: <AiFillRobot key={"Robot"} />,
-              text: (
-                <div>
-                  I have a hobby to design and build IOT and robotic systems
-                </div>
-              ),
-            },
-            {
-              icon: <MdWork key={"Work Experience"} />,
-              text: (
-                <>
-                  <div>NXP Semiconductor - Intern</div>
+        <PopInAnimation section={1}>
+          <IconLayout
+            icons={[
+              {
+                icon: <RiComputerFill key={"Programmer"} />,
+                text: (
                   <div>
-                    National Driver Training - Mobile & Full Stack Devleoper
+                    My true passion is programming! I have programmed since I
+                    was 8, starting with summer courses. I enjoy learning new
+                    languages and concepts by doing little projects and bringing
+                    as many concepts as I can to work
                   </div>
-                  <div>Driver's Alert - Full Stack Developer</div>
-                </>
-              ),
-            },
-          ]}
-        />
+                ),
+              },
+              {
+                icon: <GiElectric key={"Electrical"} />,
+                text: (
+                  <div>
+                    I always wonder how things work when I see them, both
+                    mechanically and electrically
+                  </div>
+                ),
+              },
+              {
+                icon: <RiGamepadFill key={"Gamer"} />,
+                text: <div>I play FPS, Sandbox, RPG and Puzzle Games</div>,
+              },
+              {
+                icon: <AiFillRobot key={"Robot"} />,
+                text: (
+                  <div>
+                    I have a hobby to design and build IOT and robotic systems
+                  </div>
+                ),
+              },
+              {
+                icon: <MdWork key={"Work Experience"} />,
+                text: (
+                  <>
+                    <div>NXP Semiconductor - Intern</div>
+                    <div>
+                      National Driver Training - Mobile & Full Stack Devleoper
+                    </div>
+                    <div>Driver's Alert - Full Stack Developer</div>
+                  </>
+                ),
+              },
+              {
+                icon: <IoMdSchool key={"Education"} />,
+                text: (
+                  <>
+                    <div>Attended RIT for 1.5 years</div>
+                    <div>
+                      Set a goal to obtain a degree and working on it in the
+                      background
+                    </div>
+                  </>
+                ),
+              },
+            ]}
+          />
+        </PopInAnimation>
       </PageSection>
       <PageSection>
         <PageTitle>Current Work</PageTitle>
@@ -217,23 +236,25 @@ export default function Home() {
             ]}
           />
         </div>
-        <PageDescription>
-          <ul>
-            <li>Predictive engine maintanence</li>
-            <li>Ran android on a NXP I.MX8 microcontroller</li>
-            <li>Comunicated with a sensor array using BLE</li>
-            <li>Programmed a dashboard that showed warnings</li>
-            <li>
-              Used machine learning trained on negative sounds to determine
-              issues
-            </li>
-            <li>Used a camera to detect fire</li>
-            <li>
-              Was a proof of concept to hopefully implement into trucks and
-              boats
-            </li>
-          </ul>
-        </PageDescription>
+        <PopInAnimation section={4}>
+          <PageDescription>
+            <ul>
+              <li>Predictive engine maintanence</li>
+              <li>Ran android on a NXP I.MX8 microcontroller</li>
+              <li>Comunicated with a sensor array using BLE</li>
+              <li>Programmed a dashboard that showed warnings</li>
+              <li>
+                Used machine learning trained on negative sounds to determine
+                issues
+              </li>
+              <li>Used a camera to detect fire</li>
+              <li>
+                Was a proof of concept to hopefully implement into trucks and
+                boats
+              </li>
+            </ul>
+          </PageDescription>
+        </PopInAnimation>
       </PageSection>
       <PageSection>
         <PageTitle>Other Projects I Have Done</PageTitle>
@@ -263,20 +284,34 @@ export default function Home() {
             ]}
           />
         </div>
-        <PageDescription>
-          <ul>
-            <li>This Website</li>
-            <li>Confidential Robotics Product (WICET) - Patent In Process</li>
-            <li>ESP8266 Smart Light Switch</li>
-            <li>Infinia Studios Website</li>
-            <li>Atlas MC Website</li>
-            <li>SACOT Website</li>
-            <li>CROMA Website</li>
-          </ul>
-        </PageDescription>
+        <PopInAnimation section={5}>
+          <PageDescription>
+            <ul>
+              <li>This Website</li>
+              <li>Confidential Robotics Product (WICET) - Patent In Process</li>
+              <li>ESP8266 Smart Light Switch</li>
+              <li>Infinia Studios Website</li>
+              <li>Atlas MC Website</li>
+              <li>SACOT Website</li>
+              <li>CROMA Website</li>
+            </ul>
+          </PageDescription>
+        </PopInAnimation>
       </PageSection>
       <PageSection>
         <PageTitle>Why am I interested in Firefly?</PageTitle>
+        <PopInAnimation section={6}>
+          <PageDescription>
+            <ul>
+              <li>The usage of carbon composite tank is so impressive</li>
+              <li>Being a part of the firefly team would be mindblowing</li>
+              <li>
+                I always strive for perfection and there is nothing that need to
+                be more perfect than conditions for launch
+              </li>
+            </ul>
+          </PageDescription>
+        </PopInAnimation>
       </PageSection>
       <PageSection>
         <PageTitle>
@@ -297,3 +332,31 @@ export default function Home() {
     </main>
   );
 }
+
+interface PopInAnimationProps {
+  children: ReactNode;
+  section: number;
+}
+
+const PopInAnimation = ({ children, section }: PopInAnimationProps) => {
+  const { section: currentSection } = useContext(PageSectionContext);
+
+  const isCurrentSection = useMemo(() => {
+    return section === currentSection;
+  }, [currentSection, section]);
+
+  return (
+    <AnimatePresence>
+      {isCurrentSection && (
+        <motion.div
+          initial={{ opacity: 0, y: -500 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+          exit={{ opacity: 0, y: -500 }}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};

@@ -313,7 +313,7 @@ export default function Home() {
                 media: {
                   name: "Infinia Studios",
                   path: "/other-projects/infinia-studios.PNG",
-                  link: "http://www.infiniastudios.com",
+                  link: "https://www.infiniastudios.com",
                 },
                 rowSpan: 1,
                 colSpan: 3,
@@ -359,7 +359,7 @@ export default function Home() {
                 </li>
                 <li>I thrive in a fast paced innovative environment</li>
                 <li>
-                  I want to work for a company that creates cutting edge
+                  I want to work for a company that creates cutting-edge
                   technology
                 </li>
                 <li>Opportunity for my own growth and development in the company</li>

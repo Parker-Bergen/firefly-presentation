@@ -105,3 +105,20 @@ a {
     color-scheme: dark;
   }
 }
+
+::-webkit-scrollbar {
+  width: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background:transparent url('/moon.png') no-repeat;
+  background-size:50px;  
+  background-position: center bottom;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent url('/blue-ghost.png') no-repeat;
+  background-size:25px;  
+  display: block;
+  background-position: center bottom 35px;
+}

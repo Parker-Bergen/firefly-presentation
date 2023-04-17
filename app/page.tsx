@@ -9,7 +9,7 @@ import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { BiCodeCurly } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsFilePdfFill} from "react-icons/bs";
 import { IoMdSchool } from "react-icons/io";
 import { Bubble, PageDescription, PageTitle } from "../styles/styles";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
@@ -56,6 +56,24 @@ export default function Home() {
                 ),
               },
               {
+                icon: <BiCodeCurly key={"Languages"} />,
+                text: (
+                  <>
+                    <div>JavaScript - React</div>
+                    <div>C++</div>
+                    <div>HTML / CSS</div>
+                    <div>PHP</div>
+                    <div>Labview</div>
+                    <div>Dart</div>
+                    <div>Linux (Many Flavors)</div>
+                    <div>AWS Suite</div>
+                    <div>MySQL</div>
+                    <div>Many More...</div>
+                    <div>Large Variety Of Software Tools</div>
+                  </>
+                ),
+              },
+              {
                 icon: <GiElectric key={"Electrical"} />,
                 text: (
                   <div>
@@ -76,20 +94,14 @@ export default function Home() {
                 ),
               },
               {
-                icon: <BiCodeCurly key={"Languages"} />,
+                icon: <IoMdSchool key={"Education"} />,
                 text: (
                   <>
-                    <div>JavaScript - React</div>
-                    <div>C++</div>
-                    <div>HTML / CSS</div>
-                    <div>PHP</div>
-                    <div>Labview</div>
-                    <div>Dart</div>
-                    <div>Linux (Many Flavors)</div>
-                    <div>AWS Suite</div>
-                    <div>MySQL</div>
-                    <div>Many More...</div>
-                    <div>Large Variety Of Software Tools</div>
+                    <div>Attended RIT for 1.5 years</div>
+                    <div>
+                      Working on completing a computer science degree in the
+                      background
+                    </div>
                   </>
                 ),
               },
@@ -102,18 +114,6 @@ export default function Home() {
                       National Driver Training - Mobile & Full Stack Devleoper
                     </div>
                     <div>Driver's Alert - Full Stack Developer</div>
-                  </>
-                ),
-              },
-              {
-                icon: <IoMdSchool key={"Education"} />,
-                text: (
-                  <>
-                    <div>Attended RIT for 1.5 years</div>
-                    <div>
-                      Working on completing a computer science degree in the
-                      background
-                    </div>
                   </>
                 ),
               },
@@ -337,6 +337,7 @@ export default function Home() {
         <PageTitle>Why am I interested in Firefly?</PageTitle>
         <PopInAnimation section={6}>
           <PageDescription>
+            <div>
             <ul>
               <li>
                 I have always been interested in space companies and what they
@@ -350,7 +351,7 @@ export default function Home() {
                 I always strive for perfection and there is nothing that need to
                 be more perfect than conditions for launch
               </li>
-              <li>I thrive in a fast pace innovated enviroment</li>
+              <li>I thrive in a fast pace innovtive enviroment</li>
               <li>
                 I want to work for a company that creates cutting edge
                 technology
@@ -360,6 +361,7 @@ export default function Home() {
                 company
               </li>
             </ul>
+            </div>
           </PageDescription>
         </PopInAnimation>
       </PageSection>
@@ -377,6 +379,7 @@ export default function Home() {
           <LinkIcon href={"https://www.linkedin.com/in/parker-bergen/"}>
             <BsLinkedin />
           </LinkIcon>
+          <LinkIcon href="/resume.pdf" download><BsFilePdfFill/></LinkIcon>
         </PageDescription>
       </PageSection>
     </main>

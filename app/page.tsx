@@ -266,7 +266,8 @@ export default function Home() {
         </div>
         <PageDescription>
           <ul>
-            <li>Secret Residential Robotics Product</li>
+            <li>This Website</li>
+            <li>Confidential Robotics Product (WICET) - Patent In Process</li>
             <li>ESP8266 Smart Light Switch</li>
             <li>Infinia Studios Website</li>
             <li>Atlas MC Website</li>

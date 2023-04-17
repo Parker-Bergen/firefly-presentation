@@ -66,7 +66,7 @@ export default function Home() {
               },
               {
                 icon: <RiGamepadFill key={"Gamer"} />,
-                text: <div>I play FPS, Sandbox, RPG and Puzzle Games</div>,
+                text: <div>I play FPS, Sandbox, RPG, Racing and Puzzle Games</div>,
               },
               {
                 icon: <AiFillRobot key={"Robot"} />,
@@ -94,8 +94,7 @@ export default function Home() {
                   <>
                     <div>Attended RIT for 1.5 years</div>
                     <div>
-                      Set a goal to obtain a degree and working on it in the
-                      background
+                      Working on completing a computer science degree in the background
                     </div>
                   </>
                 ),
@@ -202,7 +201,7 @@ export default function Home() {
             {
               media: {
                 name: "NDT App",
-                path: "/ndt-project/app/app-store.png",
+                path: "/ndt-project/app/app-store.PNG",
               },
               rowSpan: 1,
               colSpan: 1,
@@ -241,7 +240,7 @@ export default function Home() {
             <ul>
               <li>Predictive engine maintanence</li>
               <li>Ran android on a NXP I.MX8 microcontroller</li>
-              <li>Comunicated with a sensor array using BLE</li>
+              <li>Communicated with a sensor array using BLE</li>
               <li>Programmed a dashboard that showed warnings</li>
               <li>
                 Used machine learning trained on negative sounds to determine

@@ -16,13 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={roboto.className}>
-      <head></head>
-      <body>
-        <StyledComponentsRegistry>
+    <StyledComponentsRegistry>
+      <html lang="en" className={roboto.className}>
+        <head/>
+        <body>
           <PageSectionProvider>{children} </PageSectionProvider>
-        </StyledComponentsRegistry>
-      </body>
-    </html>
+        </body>
+      </html>
+    </StyledComponentsRegistry>
   );
 }

@@ -66,7 +66,9 @@ export default function Home() {
               },
               {
                 icon: <RiGamepadFill key={"Gamer"} />,
-                text: <div>I play FPS, Sandbox, RPG, Racing and Puzzle Games</div>,
+                text: (
+                  <div>I play FPS, Sandbox, RPG, Racing and Puzzle Games</div>
+                ),
               },
               {
                 icon: <AiFillRobot key={"Robot"} />,
@@ -94,7 +96,8 @@ export default function Home() {
                   <>
                     <div>Attended RIT for 1.5 years</div>
                     <div>
-                      Working on completing a computer science degree in the background
+                      Working on completing a computer science degree in the
+                      background
                     </div>
                   </>
                 ),
@@ -208,6 +211,16 @@ export default function Home() {
             },
           ]}
         />
+        <PopInAnimation section={3}>
+          <PageDescription>
+            <ul>
+              <li>
+                Migrated from dedicated server to cloud hosted server cluster
+              </li>
+              <li>Replicated then improved app from native to flutter</li>
+            </ul>
+          </PageDescription>
+        </PopInAnimation>
       </PageSection>
       <PageSection>
         <PageTitle>NXP Semiconductor</PageTitle>
@@ -257,10 +270,10 @@ export default function Home() {
       </PageSection>
       <PageSection>
         <PageTitle>Other Projects I Have Done</PageTitle>
-        <div style={{ width: "50%" }}>
+        <div style={{ width: "75%" }}>
           <MediaCollage
             rows={1}
-            cols={6}
+            cols={9}
             mediaLayout={[
               {
                 media: {
@@ -280,13 +293,21 @@ export default function Home() {
                 rowSpan: 1,
                 colSpan: 3,
               },
+              {
+                media: {
+                  name: "Infinia Studios",
+                  path: "/other-projects/infinia-studios.PNG",
+                  link: "http://www.infiniastudios.com",
+                },
+                rowSpan: 1,
+                colSpan: 3,
+              },
             ]}
           />
         </div>
         <PopInAnimation section={5}>
           <PageDescription>
             <ul>
-              <li>This Website</li>
               <li>Confidential Robotics Product (WICET) - Patent In Process</li>
               <li>ESP8266 Smart Light Switch</li>
               <li>Infinia Studios Website</li>
@@ -302,12 +323,21 @@ export default function Home() {
         <PopInAnimation section={6}>
           <PageDescription>
             <ul>
-              <li>The usage of carbon composite tank is so impressive</li>
-              <li>Being a part of the firefly team would be mindblowing</li>
+              <li>
+                I have always been interested in space companies and what they
+                develop
+              </li>
+              <li>
+                The usage of carbon composite tank is impressive due to the
+                sealing and molding problems that need to be overcome
+              </li>
               <li>
                 I always strive for perfection and there is nothing that need to
                 be more perfect than conditions for launch
               </li>
+              <li>I thrive in a fast pace innovated enviroment</li>
+              <li>I want to work for a company that creates cutting edge technology</li>
+              <li>There is so much room for my own growth and development in the company</li>
             </ul>
           </PageDescription>
         </PopInAnimation>

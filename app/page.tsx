@@ -50,8 +50,8 @@ export default function Home() {
                   <div>
                     My true passion is programming! I have programmed since I
                     was 8, starting with summer courses. I enjoy learning new
-                    languages and concepts by doing projects and bringing
-                    as many concepts as I can to work
+                    languages and concepts by doing projects and bringing as
+                    many concepts as I can to work
                   </div>
                 ),
               },
@@ -86,7 +86,7 @@ export default function Home() {
                 icon: <RiGamepadFill key={"Gamer"} />,
                 text: (
                   <>
-                    <div>I play FPS, Sandbox, RPG, Racing and Puzzle Games</div>
+                    <div>I play Sandbox, RPG, FPS, Racing and Puzzle Games</div>
                     <div>
                       I have a hobby to design and build IOT and robotic systems
                     </div>
@@ -266,18 +266,18 @@ export default function Home() {
         <PopInAnimation section={4}>
           <PageDescription>
             <ul>
-              <li>Predictive engine maintanence</li>
+              <li>Predictive engine maintenance</li>
               <li>Ran android on a NXP I.MX8 microcontroller</li>
               <li>Communicated with a sensor array using BLE</li>
-              <li>Programmed a dashboard that showed warnings</li>
+              <li>Programmed a dashboard that displayed warnings</li>
               <li>
                 Used machine learning trained on negative sounds to determine
                 issues
               </li>
               <li>Used a camera to detect fire</li>
               <li>
-                Was a proof of concept to potentially be implement into trucks,
-                boats and vehicle engines
+                Was a proof of concept to implement into trucks, boats and
+                vehicle engines
               </li>
             </ul>
           </PageDescription>
@@ -337,8 +337,14 @@ export default function Home() {
         <PageTitle>Why am I interested in Firefly?</PageTitle>
         <PopInAnimation section={6}>
           <PageDescription>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <ul style={{width: "40%"}}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <ul style={{ width: "40%" }}>
                 <li>
                   I have always been interested in space companies and what they
                   develop
@@ -351,17 +357,14 @@ export default function Home() {
                   I always strive for perfection and there is nothing that needs
                   to be more perfect than conditions for launch
                 </li>
-                <li>I thrive in a fast pace innovtive environment</li>
+                <li>I thrive in a fast paced innovative environment</li>
                 <li>
                   I want to work for a company that creates cutting edge
                   technology
                 </li>
-                <li>
-                  There is so much room for my own growth and development in the
-                  company
-                </li>
+                <li>Opportunity for my own growth and development in the company</li>
               </ul>
-              <div >Rocket here</div>
+              <div>Rocket here</div>
             </div>
           </PageDescription>
         </PopInAnimation>

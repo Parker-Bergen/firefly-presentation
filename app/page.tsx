@@ -17,6 +17,7 @@ import IconLayout from "../components/IconLayout/IconLayout";
 import LinkIcon from "../components/LinkIcon/LinkIcon";
 import { ReactNode, useContext, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Rocket from "../components/Rocket/Rocket";
 
 export default function Home() {
   return (
@@ -111,7 +112,7 @@ export default function Home() {
                   <>
                     <div>NXP Semiconductor - Intern</div>
                     <div>
-                      National Driver Training - Mobile & Full Stack Devleoper
+                      National Driver Training - Mobile & Full Stack Developer
                     </div>
                     <div>Driver's Alert - Full Stack Developer</div>
                   </>
@@ -364,7 +365,7 @@ export default function Home() {
                 </li>
                 <li>Opportunity for my own growth and development in the company</li>
               </ul>
-              <div>Rocket here</div>
+              <div><Rocket/></div>
             </div>
           </PageDescription>
         </PopInAnimation>

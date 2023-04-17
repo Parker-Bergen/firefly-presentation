@@ -9,7 +9,7 @@ import { RiComputerFill, RiGamepadFill } from "react-icons/ri";
 import { GiElectric } from "react-icons/gi";
 import { BiCodeCurly } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
-import { BsGithub, BsLinkedin, BsFilePdfFill} from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsFilePdfFill } from "react-icons/bs";
 import { IoMdSchool } from "react-icons/io";
 import { Bubble, PageDescription, PageTitle } from "../styles/styles";
 import MediaCollage from "../components/MediaCollage/MediaCollage";
@@ -50,7 +50,7 @@ export default function Home() {
                   <div>
                     My true passion is programming! I have programmed since I
                     was 8, starting with summer courses. I enjoy learning new
-                    languages and concepts by doing little projects and bringing
+                    languages and concepts by doing projects and bringing
                     as many concepts as I can to work
                   </div>
                 ),
@@ -276,8 +276,8 @@ export default function Home() {
               </li>
               <li>Used a camera to detect fire</li>
               <li>
-                Was a proof of concept to hopefully implement into trucks and
-                boats
+                Was a proof of concept to potentially be implement into trucks,
+                boats and vehicle engines
               </li>
             </ul>
           </PageDescription>
@@ -337,30 +337,31 @@ export default function Home() {
         <PageTitle>Why am I interested in Firefly?</PageTitle>
         <PopInAnimation section={6}>
           <PageDescription>
-            <div>
-            <ul>
-              <li>
-                I have always been interested in space companies and what they
-                develop
-              </li>
-              <li>
-                The usage of carbon composite tank is impressive due to the
-                sealing and molding problems that need to be overcome
-              </li>
-              <li>
-                I always strive for perfection and there is nothing that need to
-                be more perfect than conditions for launch
-              </li>
-              <li>I thrive in a fast pace innovtive enviroment</li>
-              <li>
-                I want to work for a company that creates cutting edge
-                technology
-              </li>
-              <li>
-                There is so much room for my own growth and development in the
-                company
-              </li>
-            </ul>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <ul style={{width: "40%"}}>
+                <li>
+                  I have always been interested in space companies and what they
+                  develop
+                </li>
+                <li>
+                  The usage of carbon composite tank is impressive due to the
+                  sealing and molding problems that need to be overcome
+                </li>
+                <li>
+                  I always strive for perfection and there is nothing that needs
+                  to be more perfect than conditions for launch
+                </li>
+                <li>I thrive in a fast pace innovtive environment</li>
+                <li>
+                  I want to work for a company that creates cutting edge
+                  technology
+                </li>
+                <li>
+                  There is so much room for my own growth and development in the
+                  company
+                </li>
+              </ul>
+              <div >Rocket here</div>
             </div>
           </PageDescription>
         </PopInAnimation>
@@ -379,7 +380,9 @@ export default function Home() {
           <LinkIcon href={"https://www.linkedin.com/in/parker-bergen/"}>
             <BsLinkedin />
           </LinkIcon>
-          <LinkIcon href="/resume.pdf" download><BsFilePdfFill/></LinkIcon>
+          <LinkIcon href="/resume.pdf" download>
+            <BsFilePdfFill />
+          </LinkIcon>
         </PageDescription>
       </PageSection>
     </main>

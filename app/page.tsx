@@ -326,7 +326,6 @@ export default function Home() {
             <ul>
               <li>Confidential Robotics Product (WICET) - Patent In Process</li>
               <li>ESP8266 Smart Light Switch</li>
-              <li>Infinia Studios Website</li>
               <li>Atlas MC Website</li>
               <li>SACOT Website</li>
               <li>CROMA Website</li>

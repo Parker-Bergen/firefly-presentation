@@ -193,15 +193,23 @@ export default function Home() {
       </PageSection>
       <PageSection>
         <PageTitle>NXP Semiconductor</PageTitle>
-        <div style={{ width: "25%" }}>
+        <div style={{ width: "50%" }}>
           <MediaCollage
             rows={1}
-            cols={3}
+            cols={6}
             mediaLayout={[
               {
                 media: {
                   name: "NXP Engine",
                   path: "/nxp-project/engine-motor.jpeg",
+                },
+                rowSpan: 1,
+                colSpan: 3,
+              },
+              {
+                media: {
+                  name: "NXP Presentation",
+                  path: "/nxp-project/presentation.jpeg",
                 },
                 rowSpan: 1,
                 colSpan: 3,

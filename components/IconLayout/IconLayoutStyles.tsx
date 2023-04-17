@@ -33,7 +33,7 @@ const TextBlock = styled.div`
     align-items:start;
     flex-direction: column;
     border-radius: 20px;
-    border: 1px solid white;
+    border: 2px solid white;
     padding: 50px 10px 10px 10px;
     height: 100%;
 `;

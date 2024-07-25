@@ -3,7 +3,7 @@ FROM node:latest as base
 
 WORKDIR /opt/app
 
-COPY  package*.json ./
+COPY package.json ./
 
 RUN yarn
 

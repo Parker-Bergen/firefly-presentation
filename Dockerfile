@@ -5,7 +5,7 @@ WORKDIR /opt/app
 
 COPY  package*.json ./
 
-RUN yarn install
+RUN yarn
 
 COPY . .
 

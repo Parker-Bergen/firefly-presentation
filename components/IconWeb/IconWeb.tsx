@@ -14,7 +14,6 @@ import {
   IconContainer,
 } from "./IconWebStyles";
 import { PageSectionContext } from "../PageSection/PageSection";
-
 type IconElement = {
   icon: ReactNode;
   text: ReactNode;
@@ -78,7 +77,7 @@ interface IconBubbleProps {
   icon: IconElement;
 }
 
-const IconBubble = ({ top, left, icon }: IconBubbleProps) => {
+const IconBubble: React.FC<IconBubbleProps> = ({ top, left, icon }: IconBubbleProps) => {
   const [hover, setHover] = useState(false);
 
   return (

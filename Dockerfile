@@ -1,7 +1,7 @@
 
 FROM node:latest as base
 
-WORKDIR /opt/api
+WORKDIR /opt/app
 
 COPY  package*.json ./
 
